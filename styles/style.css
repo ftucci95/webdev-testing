@@ -1,0 +1,156 @@
+/* "My god, an unnecessary comment, what a jerk." - Default reader */
+
+/* :link es lo que se llama una pseudoclase*/
+.my_link:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;  
+}
+
+.my_link:visited {
+    color: darkgreen;
+    background-color: transparent;
+    text-decoration: none;  
+}
+
+.my_link:hover {
+    color: blue;
+    background-color: transparent;
+    text-decoration: none;  
+}
+
+.section{
+    border-color:blue;
+    border-width: 3px;
+}
+
+@media only screen and (max-width: 430px)
+{
+    h1
+    {
+        font-size: 20px;
+    }
+    h2
+    {
+        font-size:6vw !important;
+    }
+    p
+    {
+        font-size: 14px;
+    }
+    .grid-main aside{
+        font-size: 4vw !important;
+    }
+}
+@media only screen and ( (min-width: 431px) and (max-width: 1024px) )
+{
+    h1
+    {
+        font-size: 24px;
+    }
+    h2
+    {
+        font-size:4vw !important;
+    }
+    p
+    {
+        font-size: 16px;
+    }
+    .grid-main aside{
+        font-size: 3vw !important;
+        padding:5vw !important;
+    }
+
+}
+@media only screen and (min-width: 1025px)
+{
+    h1
+    {
+        font-size: 28px;
+    }
+    h2
+    {
+        font-size:3vw !important;
+    }
+    p
+    {
+        font-size: 18px;
+    }
+
+    .grid-main aside{
+        padding:7vw !important;
+    }
+}
+
+body{
+    width:100%;
+    border-color:blue;
+    border-width:3px;
+    border-style:dashed;
+}
+
+
+
+aside{
+    min-height: 15rem;
+    text-align: justify;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 4fr 9fr 1fr;
+    row-gap: 10px;
+    column-gap: 16px;
+    grid-template-areas: "head head" "menu main" "foot foot";
+}
+
+.grid-head{
+    grid-area:head; background: blueviolet; 
+}
+
+.grid-head h1{
+    text-align: center;
+}
+
+.header-img{
+    max-height: fit-content;
+    max-width:fit-content;
+}
+
+.header-title{
+    max-width:min-content;
+}
+
+.header-link{
+    float:right;
+    padding:5px;
+
+}
+
+.grid-menu{
+    grid-area:menu; background: limegreen; text-align:center; display: flex; align-items: center;
+}
+
+.grid-menu h2 {
+    justify-content: center;
+    padding:3vw;
+    font-size:4vw;
+}
+
+.grid-main{
+    grid-area:main; background: rgb(109, 35, 97); text-align:center;
+}
+
+.grid-main aside{
+    padding:3vw;
+    font-size:2vw;
+}
+
+.grid-main aside strong{
+    float:right;
+}
+
+.grid-foot{
+    grid-area:foot; background: navy; text-align:center; color:azure;
+}

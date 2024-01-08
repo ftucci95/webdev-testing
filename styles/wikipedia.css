@@ -1,0 +1,142 @@
+/* Analizando rápidamente el comportamiento de wikipedia es el siguiente:
+anchos mayores a 1400 px: en las barras laterales color gris hay un botón en la esquina inferior derecha que permite cambiar al modo full-width
+anchos mayores a 1340px: crecen dos barras laterales a los costados de la página, desde 0 px hasta completar el ancho de la ventana.
+anchos mayores a 1000px: sólo varía el ancho del cuerpo del articulo, la side-card queda estática, mientras tanto en el header se acercan todos los elementos
+anchos mayores a 720px: el logo del header cambia a uno de mayor tamaño, incorporando el mundito a su izquierda; en la parte derecha del header aparecen 2 elementos: "Crear una cuenta" "Acceder", entre la lupa y el "..."
+en la parte superior del cuerpo, sobre el margen derecho, aparecen opciones "Leer" "Editar" "Ver historial", a la izquierda de "Herramientas" (ya estaban contenidas ahí dentro)
+anchos mayores a 518px: sigue achicándose el ancho del cuerpo. La side-card no se toca.
+*/
+
+:root {
+    --background-white:#ffffff;
+    --background-black:#222428;
+    --background-grey:#f8f9fa;
+    --text-black:#202122;
+    --text-white:#e7e9ea;
+    --font-size-medium:0.875rem;
+    --line-height-medium:1.57;
+    --link-color:#3366cc;
+    --emptylink-color:#d73333;
+    --visitedlink-color:#795cb2;
+
+}
+
+body{
+    /*--Acá voy a meter todas las cosas referidas a la tipografía y el diseño responsive*/
+    height:100%;
+    margin:0px;
+    font-family: sans-serif;
+    font-size:var(--font-size-medium);
+    line-height: var(--line-height-medium);
+    color: var(--text-black);
+    background-color: var(--background-white);
+}
+
+/* .l2-main{
+    width:100%;
+} */
+
+.l2-searchbar{
+    position:relative;
+    left:0px;
+}
+
+.l2-links{
+    position:relative;
+    right:0px;
+}
+
+.l1-sidebar{
+    background-color: var(--background-grey);
+}
+
+.l1-header{
+    display:grid;
+    column-gap:24px;
+    grid-template-columns: 15.5rem minmax(0px,1fr);
+    grid-template-areas:'header-menu header-main';
+    height: 50px;
+    padding: 12px 44px 12px 44px ;
+/*     border-color: #222428;
+    border-style: dashed; */
+    justify-self: center;
+}
+
+.l2-article-title h1{
+    font-size:1.8em;
+    font-family:'Linux Libertine','Georgia','Times';
+    line-height:1.375;
+    margin:0px;
+    font-weight:normal;
+}
+
+.l2-menu{
+    grid-area:header-menu;
+    display:flex;
+    align-items:center;
+}
+
+.l2-main{
+    grid-area:header-main;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.grid-container{
+    min-width: 31.25em;
+    max-width: 99.75rem;
+    padding-left: 2.75rem;
+    padding-right: 2.75rem;
+    box-sizing:border-box;
+    display:grid;
+    column-gap:24px;
+    grid-template: 1fr min-content / 12.25rem minmax(0,1fr);
+    grid-template-areas: 'columna contenido' 'pie pie';
+    padding-top:0.05px;
+    margin-top:24px;
+}
+.l1-aside{
+    grid-area: columna;
+    margin-top: 3.97em;
+}
+
+.l1-article{
+    grid-area: contenido;
+}
+
+.l1-footer{
+    grid-area: pie;
+}
+
+.wp-link{
+    color:var(--link-color);
+    text-decoration: none;
+}
+
+.wp-link:hover{
+    text-decoration: underline;
+}
+
+.wp-link:visited{
+    color:var(--visitedlink-color);
+    text-decoration: none;
+}
+
+.black-link{
+    color:var(--text-black);
+}
+
+.unvisited-link{
+    color:var(--emptylink-color);
+}
+
+.option{
+    margin: 4px;
+}
+
+.l2-article-options{
+    display:flex;
+    justify-content:space-between;
+    padding-top: 5px;
+}
