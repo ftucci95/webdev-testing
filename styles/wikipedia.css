@@ -15,6 +15,9 @@ anchos mayores a 518px: sigue achicándose el ancho del cuerpo. La side-card no 
     --text-white:#e7e9ea;
     --font-size-medium:0.875rem;
     --line-height-medium:1.57;
+    --sidecard-title-background:#C3D6EF;
+    --sidecard-subtitle-background:#dcdcdc;
+    --sidecard-background:#f9f9f9;
     --link-color:#3366cc;
     --emptylink-color:#d73333;
     --visitedlink-color:#795cb2;
@@ -139,4 +142,38 @@ body{
     display:flex;
     justify-content:space-between;
     padding-top: 5px;
+}
+
+.l4-sidecard
+{
+    /* display:table; */
+    right:0px;
+    
+}
+
+.sidecard-title{
+    font-size: 140%;
+    font-weight: bolder;
+    height: 45px;
+}
+
+.sidecard-titles
+{
+    background: var(--sidecard-title-background);
+    color:var(--text-black);
+}
+
+.l5-sidecard-subtitle
+{
+    background: var(--sidecard-subtitle-background);
+    text-align:center;
+}
+
+.sidecard-firstRow
+{
+    text-align: left;
+}
+
+th{
+    display: table-cell;
 }
